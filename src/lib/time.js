@@ -16,7 +16,7 @@ const parseTime = (time) => {
  * @returns {Object} - The parsed time moment instance.
  */
 const parseRecordTime = (time) => {
-  return moment(time);
+  return moment(time, 'h:mm a');
 };
 
 /**

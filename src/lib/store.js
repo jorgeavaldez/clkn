@@ -1,10 +1,9 @@
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
 const moment = require('moment');
-const { parseTime } = require('./time');
+const { parseTime, prettyTime } = require('./time');
 
 const DB_PATH = process.env.DB_PATH || './hours.json';
-
 
 /**
  * Initializes the database adapters and returns the store commands.
@@ -22,13 +21,16 @@ const init = () => {
    * the provided action and returns the inserted database record.
    * @param {string} action - The punch action for the clock function.
    * @returns {function(string): Object} A function for punching the clock.
+   * Returns the updated hours collection instance.
    */
   const punch = (action) => (time) => {
-    if (!time || time === 'now') time = moment();
+    if (time === 'now') time = moment();
 
-    return record = hours
-          .push({ action, time: parseTime(time) })
+    const record = hours
+          .push({ action, time: prettyTime(time, parseTime) })
           .write();
+
+    return record;
   };
 
   return {

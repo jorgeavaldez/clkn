@@ -1,7 +1,7 @@
 const moment = require('moment');
 
 const { punch } = require('./store');
-const { prettyTime, parseRecordTime } = require('./time');
+const { prettyTime } = require('./time');
 
 /**
  * Returns a yargs command object representative of different clock actions.
@@ -22,8 +22,10 @@ const createPunchCommand = (action) => {
     },
     handler: (argv) => {
       const { when } = argv;
-      const record = punch(action)(when);
-      console.log(`clocked ${action} @ ${prettyTime(record.time, parseRecordTime)}`);
+      const hours = punch(action)(when);
+      const record = hours[hours.length - 1];
+
+      console.log(`clocked ${action} @ ${record.time}`);
     }
   };
 };
