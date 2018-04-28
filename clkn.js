@@ -10,5 +10,7 @@ require('yargs')
   .usage('$0 <cmd> [args]')
   .command(createPunchCommand('in'))
   .command(createPunchCommand('out'))
+  .demandCommand()
   .help()
+  .wrap(72)
   .argv;
