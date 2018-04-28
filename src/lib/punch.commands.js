@@ -1,8 +1,7 @@
 const moment = require('moment');
 
-const lib = require('../lib');
-const { punch } = lib.store();
-const { prettyTime, parseRecordTime } = lib.time;
+const { punch } = require('./store');
+const { prettyTime, parseRecordTime } = require('./time');
 
 const createPunchCommand = (action) => {
   return {

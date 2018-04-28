@@ -13,6 +13,9 @@
     "yargs": "^11.0.0"
   },
   "scripts": {
+    "start": "node clkn.js",
+    "in": "node clkn.js in",
+    "out": "node clkn.js out",
     "test": "jest"
   }
 }
