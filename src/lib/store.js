@@ -23,8 +23,6 @@ const init = () => {
   return {
     hours,
     punch,
-    clockIn: punch('in'),
-    clockOut: punch('out'),
   };
 };
 
