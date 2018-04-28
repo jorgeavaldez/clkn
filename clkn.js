@@ -3,8 +3,7 @@
 require('dotenv').config();
 
 const moment = require('moment');
-const { commands } = require('./src/lib');
-const { createPunchCommand } = commands.punch;
+const { createPunchCommand } = require('./src/lib').commands.punch;
 
 require('yargs')
   .version('v0.1.0')
