@@ -6,11 +6,11 @@
   "author": "jorge valdez (jorge@realgeeks.com)",
   "license": "MIT",
   "dependencies": {
-    "commander": "^2.14.1",
     "dotenv": "^5.0.1",
     "jest": "^22.2.2",
     "lowdb": "^1.0.0",
-    "moment": "^2.20.1"
+    "moment": "^2.20.1",
+    "yargs": "^11.0.0"
   },
   "scripts": {
     "test": "jest"
